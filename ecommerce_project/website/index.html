@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lumina | Next Gen Tech</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Lumina<span class="dot">.</span></div>
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+            <input type="text" id="search-input" placeholder="Search for products...">
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Products</a>
+            <a href="#">Cart <span class="cart-count">0</span></a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Future of Tech</h1>
+            <p>Experience premium electronics designed for the modern era.</p>
+            <button class="cta-btn">Explore Now</button>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="section-header">
+            <h2>Trending Products</h2>
+            <div class="filter-tags">
+                <span class="tag active">All</span>
+                <span class="tag">Laptops</span>
+                <span class="tag">Audio</span>
+                <span class="tag">Wearables</span>
+            </div>
+        </div>
+        
+        <div id="product-grid" class="product-grid">
+            <!-- Products will be injected here by JS -->
+        </div>
+        
+        <div id="no-results" class="no-results hidden">
+            <i class="far fa-frown"></i>
+            <p>No products found matching your search.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Lumina Tech. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

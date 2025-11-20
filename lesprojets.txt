@@ -1,0 +1,177 @@
+1
+Projet1 : Test et validation d’un formulaire:
+Le but de test de validation de formulaire est de vérifier que les données saisies dans un
+formulaire web ou une application sont correctes, cohérentes et conformes aux critères
+prédéfinis avant leur soumission ou enregistrement. Ce processus est crucial pour garantir la
+qualité des données collectées et assurer une meilleure expérience utilisateur. Le test de
+validation de formulaire vise à garantir la fiabilité, la sécurité et la convivialité des données
+entrées par les utilisateurs avant qu'elles ne soient traitées ou stockées par le système.
+Les objectifs principaux du test de validation de formulaire :
+ Exactitude des données : Vérifier si les données saisies sont correctes et correspondent
+au format attendu (par exemple, adresses email valides, numéros de téléphone au bon
+format, etc.).
+ Complétude : S'assurer que tous les champs obligatoires sont remplis et que les
+informations requises sont présentes.
+ Cohérence : Contrôler la cohérence des données entre différents champs du formulaire
+pour éviter les incohérences ou les erreurs logiques.
+ Sécurité : Tester la sécurité du formulaire en vérifiant qu'il est protégé contre les
+attaques de type injection SQL, cross-site scripting (XSS), ou toute autre vulnérabilité
+de sécurité.
+ Validation côté client et côté serveur : Assurer la validation des données à la fois côté
+client (via JavaScript, par exemple) pour une meilleure expérience utilisateur et côté
+serveur pour une sécurité accrue.
+ Messages d'erreur clairs : Fournir des messages d'erreur précis et compréhensibles
+pour guider les utilisateurs en cas de données invalides ou manquantes.
+ Performance : Tester la réactivité du formulaire en vérifiant le temps nécessaire pour
+valider et soumettre les données.
+Travail à faire :
+Utiliser Robot Framework avec son éditeur RIDE pour créer des tests automatisés qui
+interagissent avec les différents champs du formulaire de contact.
+Quelques Consignes:
+Vérifiez la présence et le bon fonctionnement des champs obligatoires (Nom, Email, Message,
+etc.).
+Testez les validations des champs (par exemple, la validation de l'adresse e-mail).
+Vérifiez les différents scénarios (par exemple, soumettre le formulaire avec des données
+valides et des données manquantes).
+Mini Projets : Test et Validation Classe : 3GINF IDSD ID/SD
+Enseignante : Mme Ines Jemal
+2
+Utiliser des mots-clés fournis par la bibliothèque SeleniumLibrary pour saisir des données
+dans les champs, soumettre le formulaire et vérifier les éléments de la page web.
+Génération de rapports : Configurez la génération de rapports pour obtenir des informations
+détaillées sur l'exécution des tests
+Projet2: Automatisation de test et validation pour la fonction de
+recherche sur un site d'e-commerce
+L'automatisation des tests pour la fonction de recherche sur un site d'e-commerce a plusieurs
+objectifs principaux :
+ Fiabilité accrue : L'automatisation des tests permet de s'assurer que la fonction de
+recherche fonctionne de manière fiable et cohérente. Cela réduit les risques d'erreurs et
+de dysfonctionnements dans cette fonctionnalité cruciale pour l'expérience utilisateur.
+ Gain de temps : Les tests automatisés peuvent être exécutés plus rapidement et à
+plusieurs reprises sans nécessiter une intervention humaine constante. Cela permet de
+gagner du temps par rapport aux tests manuels, en particulier pour des fonctionnalités
+qui sont souvent mises à jour ou modifiées.
+ Détection précoce des erreurs : L'automatisation des tests permet de détecter les
+problèmes potentiels plus tôt dans le processus de développement. Cela permet de les
+corriger plus rapidement, réduisant ainsi les coûts associés à la correction d'éventuelles
+erreurs découvertes tardivement.
+ Optimisation de l'expérience utilisateur : Une fonction de recherche efficace est
+cruciale pour l'expérience utilisateur sur un site d'e-commerce. Des tests automatisés
+bien conçus garantissent que les utilisateurs peuvent trouver facilement et rapidement
+les produits recherchés, améliorant ainsi leur satisfaction et augmentant
+potentiellement les ventes.
+ Assurance qualité continue : L'automatisation des tests permet d'intégrer des contrôles
+de qualité continus tout au long du processus de développement et de déploiement.
+Cela contribue à maintenir la qualité globale du site et de ses fonctionnalités.
+Pour mettre en place une automatisation de tests efficace pour la fonction de recherche sur un
+site d'e-commerce, il est important d'utiliser des outils et des Framework appropriés, de
+définir des cas de tests complets et représentatifs, et de s'assurer que les tests sont
+régulièrement mis à jour pour refléter les évolutions du site et de la fonctionnalité de
+recherche.
+Travail à faire
+Automatiser les tests pour la fonction de recherche sur un site d'e-commerce pour vérifier la
+précision des résultats de recherche.
+Quelques Consignes
+Tester la recherche avec différents termes de recherche.
+Vérifier les résultats lorsque le terme de recherche correspond à un produit existant.
+3
+Vérifier les résultats lorsque le terme de recherche ne correspond à aucun produit.
+Utiliser les mots-clés fournis par la bibliothèque SeleniumLibrary pour saisir les termes de
+recherche, lancer la recherche et vérifier les résultats.
+Génération de rapports : Configurez la génération de rapports pour obtenir des informations
+détaillées sur l'exécution des tests.
+Projet3 : Test et validation de navigation sur un site web
+Les tests de navigation sur un site web ont pour but principal de s'assurer que les utilisateurs
+peuvent parcourir le site de manière fluide, intuitive et sans rencontrer d'obstacles, afin
+d'optimiser leur expérience. Voici quelques objectifs clés des tests de navigation :
+ Facilité d'utilisation : Vérifier que la navigation sur le site est intuitive, avec des
+menus clairs, une organisation logique des pages et une structure de navigation
+cohérente.
+ Accessibilité : S'assurer que tous les utilisateurs, y compris ceux ayant des besoins
+spécifiques en matière d'accessibilité (utilisateurs malvoyants, moteurs de recherche,
+etc.), peuvent naviguer facilement sur le site et accéder à l'ensemble de son contenu.
+ Compatibilité multiplateforme : Tester la compatibilité de la navigation sur différents
+navigateurs web (Google Chrome, Firefox, Safari, etc.) et sur différents appareils
+(ordinateurs de bureau, tablettes, smartphones) pour garantir une expérience cohérente
+et optimale quel que soit le dispositif utilisé.
+ Fonctionnalités de navigation : Vérifier le bon fonctionnement des éléments interactifs
+de navigation tels que les liens, les boutons, les menus déroulants, les filtres de
+recherche, etc.
+ Performance : S'assurer que la navigation sur le site est rapide et réactive, sans délais
+excessifs de chargement des pages ou de lenteur dans l'interaction avec les éléments
+du site.
+ Test des scénarios d'utilisation : Évaluer la navigation à travers différents scénarios
+d'utilisation typiques des utilisateurs, en vérifiant que les parcours prévus (recherche
+de produits, ajout au panier, processus de paiement, etc.) se déroulent sans problème.
+ Détection des erreurs et des liens brisés : Identifier les liens cassés, les redirections
+incorrectes ou tout autre problème pouvant perturber la navigation ou bloquer l'accès à
+certaines parties du site.
+En somme, les tests de navigation visent à garantir une expérience utilisateur optimale en
+s'assurant que les visiteurs peuvent se déplacer aisément sur le site, trouver les informations
+qu'ils cherchent et effectuer les actions souhaitées sans rencontrer de difficultés ni d'erreurs.
+Travail à faire :
+Écrivez des tests pour naviguer à travers les différentes pages d'un site web. Vérifiez les liens,
+les menus de navigation, et assurez-vous que les pages s'ouvrent correctement.
+4
+Quelques Consignes
+Le test ouvre un navigateur et accède au site web à l'aide de l'URL spécifiée.
+Ensuite, il clique sur les liens du menu de navigation ("Services", "About Us", "Contact",
+"Home") pour accéder à différentes pages.
+Après chaque clic, il vérifie si le titre de la page correspond à celui attendu
+Projet4 : Test d'intégration avec une base de données
+Les tests d'intégration avec une base de données ont pour objectif de vérifier que les
+interactions entre le code applicatif et la base de données fonctionnent correctement et de
+manière cohérente. Voici les principaux buts de ces tests :
+ Validation des requêtes et des opérations sur la base de données : Vérifier que les
+requêtes SQL ou les opérations effectuées par l'application sur la base de données sont
+correctement formulées et renvoient les résultats attendus. Cela inclut la création, la
+lecture, la mise à jour et la suppression (CRUD) des données.
+ Assurance de la cohérence des données : S'assurer que les données sont correctement
+enregistrées, mises à jour ou supprimées dans la base de données en fonction des
+actions de l'application. Cela garantit que les informations sont cohérentes et précises.
+ Tests de performances : Évaluer les performances de l'application en termes de temps
+de réponse lors de l'accès et de la manipulation des données dans la base de données.
+Cela permet de détecter et d'optimiser les requêtes ou les opérations lentes.
+ Gestion des transactions : Vérifier que les transactions sont gérées correctement, en
+garantissant que les opérations sur la base de données sont soit totalement effectuées,
+soit annulées en cas d'erreur ou d'échec pour maintenir la cohérence des données.
+ Couverture des différents cas d'utilisation : Tester différents scénarios d'utilisation
+pour s'assurer que l'application interagit correctement avec la base de données dans
+divers contextes, en tenant compte des différentes conditions et cas limites.
+ Sécurité des données : Assurer que les mécanismes de sécurité, comme la protection
+contre les injections SQL ou les accès non autorisés, sont mis en œuvre correctement
+pour préserver l'intégrité et la confidentialité des données.
+Travail à faire :
+Écriver des tests qui impliquent l'interaction avec une base de données. Vous pourriez ajouter
+des données, les récupérer, les mettre à jour et vérifier les résultats à l'aide de requêtes SQL.
+Projet5 : Test de manipulation de fichiers
+Les tests de manipulation de fichiers ont pour but de vérifier que les opérations effectuées par
+une application sur des fichiers (lecture, écriture, suppression, modification, déplacement,
+etc.) sont réalisées de manière correcte et fiable. Voici les principaux objectifs de ces tests :
+ Validation des opérations de base : Vérifier que les opérations courantes sur les
+fichiers, telles que la création, la lecture, l'écriture et la suppression, sont exécutées
+correctement par l'application.
+5
+ Gestion des formats et des types de fichiers : S'assurer que l'application peut
+manipuler différents types de fichiers (texte, image, vidéo, documents, etc.) et
+respecter les formats spécifiques requis.
+ Tests de limites et de robustesse : Vérifier le comportement de l'application lorsqu'elle
+est confrontée à des fichiers de tailles inhabituelles, des noms de fichiers spéciaux ou
+des conditions de fichiers inattendues pour garantir sa robustesse.
+ Gestion des erreurs et des exceptions : Tester la capacité de l'application à gérer les
+erreurs et les exceptions liées à la manipulation des fichiers, telles que les autorisations
+insuffisantes, les fichiers manquants ou corrompus, etc.
+ Sécurité des fichiers : Vérifier que l'application protège correctement l'intégrité des
+fichiers, empêche les altérations non autorisées et prend en charge les mécanismes de
+sécurité appropriés, comme la gestion des droits d'accès.
+ Scénarios de cas d'utilisation spécifiques : Tester les différentes fonctionnalités de
+l'application impliquant la manipulation de fichiers, comme l'importation,
+l'exportation, la compression, le téléchargement, etc.
+ Compatibilité multiplateforme : S'assurer que les opérations de manipulation de
+fichiers fonctionnent de manière cohérente sur différentes plateformes (Windows,
+macOS, Linux) et avec différents systèmes de fichiers
+Travail à faire :
+Utiliser la bibliothèque Selenium et OperatinSystem pour Automatiser des tests pour vérifier
+la création d’un fichier, la lecture de contenue de fichier, la modification (ajout des textes des
+images, etc.) , déplacer un fichier, renommer un fichier et supprimer de fichiers dans un
+système de fichiers.
