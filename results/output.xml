@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.10.12 on linux)" generated="2025-11-21T01:07:02.800928" rpa="false" schemaversion="5">
+<suite id="s1" name="Search Tests" source="/home/ahmed/Desktop/projetTest/ecommerce_project/tests/search_tests.robot">
+<test id="s1-t1" name="Search For Existing Product" line="10">
+<kw name="Open Browser To Home Page" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:02.970702" level="INFO">Opening browser 'Chrome' to base url 'file:///home/ahmed/Desktop/projetTest/ecommerce_project/website/index.html'.</msg>
+<arg>${HOME URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-21T01:07:02.970310" elapsed="11.266488"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-21T01:07:14.237151" elapsed="0.043754"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-11-21T01:07:14.281362" elapsed="0.000821"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:14.811546" level="INFO">Page title is 'Lumina | Next Gen Tech'.</msg>
+<arg>Lumina | Next Gen Tech</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-21T01:07:14.282601" elapsed="0.529290"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:02.969084" elapsed="11.843167"/>
+</kw>
+<kw name="Input Search Term" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:14.817005" level="INFO">Typing text 'Lumina' into text field 'id:search-input'.</msg>
+<arg>id:search-input</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-21T01:07:14.815286" elapsed="1.875487"/>
+</kw>
+<arg>Lumina</arg>
+<status status="PASS" start="2025-11-21T01:07:14.813504" elapsed="1.877698"/>
+</kw>
+<kw name="Verify Product Visible" owner="resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:16.693490" elapsed="1.071253"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:18.816879" level="INFO">Element 'xpath=//h3[contains(text(), 'Lumina X1 Laptop')]' is displayed.</msg>
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:17.765479" elapsed="1.052457"/>
+</kw>
+<arg>Lumina X1 Laptop</arg>
+<status status="PASS" start="2025-11-21T01:07:16.692058" elapsed="2.126882"/>
+</kw>
+<kw name="Verify Product Not Visible" owner="resources">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:19.364977" level="INFO">Element 'xpath=//h3[contains(text(), 'Sonic Pro Headphones')]' did not exist.</msg>
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:18.822252" elapsed="0.543093"/>
+</kw>
+<arg>Sonic Pro Headphones</arg>
+<status status="PASS" start="2025-11-21T01:07:18.820336" elapsed="0.545447"/>
+</kw>
+<kw name="Close The Browser" owner="resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-21T01:07:19.369860" elapsed="0.578487"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:19.368366" elapsed="0.580676"/>
+</kw>
+<doc>Test searching for a product that exists in the catalog.</doc>
+<status status="PASS" start="2025-11-21T01:07:02.967974" elapsed="16.982199"/>
+</test>
+<test id="s1-t2" name="Search For Category" line="17">
+<kw name="Open Browser To Home Page" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:19.958453" level="INFO">Opening browser 'Chrome' to base url 'file:///home/ahmed/Desktop/projetTest/ecommerce_project/website/index.html'.</msg>
+<arg>${HOME URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-21T01:07:19.956818" elapsed="2.368005"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-21T01:07:22.325728" elapsed="0.639133"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-11-21T01:07:22.966334" elapsed="0.001698"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:23.492568" level="INFO">Page title is 'Lumina | Next Gen Tech'.</msg>
+<arg>Lumina | Next Gen Tech</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-21T01:07:22.969342" elapsed="0.523579"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:19.955033" elapsed="3.538263"/>
+</kw>
+<kw name="Input Search Term" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:23.496510" level="INFO">Typing text 'Audio' into text field 'id:search-input'.</msg>
+<arg>id:search-input</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-21T01:07:23.495538" elapsed="1.745244"/>
+</kw>
+<arg>Audio</arg>
+<status status="PASS" start="2025-11-21T01:07:23.494367" elapsed="1.747035"/>
+</kw>
+<kw name="Verify Product Visible" owner="resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:25.243697" elapsed="1.071051"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:27.369662" level="INFO">Element 'xpath=//h3[contains(text(), 'Sonic Pro Headphones')]' is displayed.</msg>
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:26.315633" elapsed="1.054404"/>
+</kw>
+<arg>Sonic Pro Headphones</arg>
+<status status="PASS" start="2025-11-21T01:07:25.242542" elapsed="2.127940"/>
+</kw>
+<kw name="Verify Product Visible" owner="resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:27.372639" elapsed="1.068075"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:29.491533" level="INFO">Element 'xpath=//h3[contains(text(), 'BassBoom Speaker')]' is displayed.</msg>
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:28.441469" elapsed="1.050418"/>
+</kw>
+<arg>BassBoom Speaker</arg>
+<status status="PASS" start="2025-11-21T01:07:27.371517" elapsed="2.120723"/>
+</kw>
+<kw name="Verify Product Not Visible" owner="resources">
+<kw name="Element Should Not Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:30.037537" level="INFO">Element 'xpath=//h3[contains(text(), 'Lumina X1 Laptop')]' did not exist.</msg>
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is NOT visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:29.494703" elapsed="0.543181"/>
+</kw>
+<arg>Lumina X1 Laptop</arg>
+<status status="PASS" start="2025-11-21T01:07:29.493157" elapsed="0.545085"/>
+</kw>
+<kw name="Close The Browser" owner="resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-21T01:07:30.041084" elapsed="0.577088"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:30.039873" elapsed="0.578877"/>
+</kw>
+<doc>Test searching for a category (e.g., 'Audio').</doc>
+<status status="PASS" start="2025-11-21T01:07:19.951622" elapsed="10.667615"/>
+</test>
+<test id="s1-t3" name="Search For Non-Existent Product" line="25">
+<kw name="Open Browser To Home Page" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:30.627913" level="INFO">Opening browser 'Chrome' to base url 'file:///home/ahmed/Desktop/projetTest/ecommerce_project/website/index.html'.</msg>
+<arg>${HOME URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-21T01:07:30.625719" elapsed="2.170192"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-21T01:07:32.797144" elapsed="0.631645"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-11-21T01:07:33.429944" elapsed="0.002216"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:33.956611" level="INFO">Page title is 'Lumina | Next Gen Tech'.</msg>
+<arg>Lumina | Next Gen Tech</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-21T01:07:33.432999" elapsed="0.523786"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:30.623781" elapsed="3.333150"/>
+</kw>
+<kw name="Input Search Term" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:33.958165" level="INFO">Typing text 'Banana' into text field 'id:search-input'.</msg>
+<arg>id:search-input</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-21T01:07:33.957828" elapsed="1.834334"/>
+</kw>
+<arg>Banana</arg>
+<status status="PASS" start="2025-11-21T01:07:33.957277" elapsed="1.835788"/>
+</kw>
+<kw name="Verify No Results Message" owner="resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>id:no-results</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:35.798115" elapsed="1.089627"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:37.943562" level="INFO">Element 'id:no-results' is displayed.</msg>
+<arg>id:no-results</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:36.888445" elapsed="1.055726"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:39.023232" level="INFO">Element 'id:no-results' contains text 'No products found'.</msg>
+<arg>id:no-results</arg>
+<arg>No products found</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2025-11-21T01:07:37.944966" elapsed="1.079323"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:35.796068" elapsed="3.228945"/>
+</kw>
+<kw name="Close The Browser" owner="resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-21T01:07:39.029029" elapsed="0.577025"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:39.026777" elapsed="0.580416"/>
+</kw>
+<doc>Test searching for a term that yields no results.</doc>
+<status status="PASS" start="2025-11-21T01:07:30.620830" elapsed="8.987360"/>
+</test>
+<test id="s1-t4" name="Search Partial Match" line="31">
+<kw name="Open Browser To Home Page" owner="resources">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:39.617343" level="INFO">Opening browser 'Chrome' to base url 'file:///home/ahmed/Desktop/projetTest/ecommerce_project/website/index.html'.</msg>
+<arg>${HOME URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2025-11-21T01:07:39.615289" elapsed="2.006129"/>
+</kw>
+<kw name="Maximize Browser Window" owner="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" start="2025-11-21T01:07:41.623868" elapsed="0.654866"/>
+</kw>
+<kw name="Set Selenium Speed" owner="SeleniumLibrary">
+<arg>${DELAY}</arg>
+<doc>Sets the delay that is waited after each Selenium command.</doc>
+<status status="PASS" start="2025-11-21T01:07:42.279426" elapsed="0.000985"/>
+</kw>
+<kw name="Title Should Be" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:42.802567" level="INFO">Page title is 'Lumina | Next Gen Tech'.</msg>
+<arg>Lumina | Next Gen Tech</arg>
+<doc>Verifies that the current page title equals ``title``.</doc>
+<status status="PASS" start="2025-11-21T01:07:42.280924" elapsed="0.522149"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:39.612981" elapsed="3.190699"/>
+</kw>
+<kw name="Input Search Term" owner="resources">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:42.809126" level="INFO">Typing text 'Watch' into text field 'id:search-input'.</msg>
+<arg>id:search-input</arg>
+<arg>${term}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2025-11-21T01:07:42.807677" elapsed="1.744241"/>
+</kw>
+<arg>Watch</arg>
+<status status="PASS" start="2025-11-21T01:07:42.805286" elapsed="1.747193"/>
+</kw>
+<kw name="Verify Product Visible" owner="resources">
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:44.556974" elapsed="1.086728"/>
+</kw>
+<kw name="Element Should Be Visible" owner="SeleniumLibrary">
+<msg time="2025-11-21T01:07:46.697544" level="INFO">Element 'xpath=//h3[contains(text(), 'Smart Watch Series 5')]' is displayed.</msg>
+<arg>xpath=//h3[contains(text(), '${product_name}')]</arg>
+<doc>Verifies that the element identified by ``locator`` is visible.</doc>
+<status status="PASS" start="2025-11-21T01:07:45.644254" elapsed="1.053583"/>
+</kw>
+<arg>Smart Watch Series 5</arg>
+<status status="PASS" start="2025-11-21T01:07:44.554798" elapsed="2.143329"/>
+</kw>
+<kw name="Close The Browser" owner="resources" type="TEARDOWN">
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2025-11-21T01:07:46.700158" elapsed="0.593694"/>
+</kw>
+<status status="PASS" start="2025-11-21T01:07:46.699208" elapsed="0.595289"/>
+</kw>
+<doc>Test searching with a partial string.</doc>
+<status status="PASS" start="2025-11-21T01:07:39.610069" elapsed="7.684938"/>
+</test>
+<doc>A test suite for the e-commerce search functionality.
+
+This suite validates that the search bar correctly filters products
+and displays the appropriate message when no results are found.</doc>
+<status status="PASS" start="2025-11-21T01:07:02.802179" elapsed="44.494609"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Search Tests" id="s1" pass="4" fail="0" skip="0">Search Tests</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
