@@ -1,0 +1,1331 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[french]{babel}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{float}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+\usepackage{fontawesome}
+\usepackage{tikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{titlesec}
+\usepackage{multicol}
+\usepackage{booktabs}
+\usepackage{array}
+
+\geometry{margin=2cm, top=3cm, bottom=3cm}
+
+% Couleurs modernes
+\definecolor{primaryblue}{RGB}{41, 128, 185}
+\definecolor{secondaryblue}{RGB}{52, 152, 219}
+\definecolor{accentgreen}{RGB}{39, 174, 96}
+\definecolor{warningorange}{RGB}{230, 126, 34}
+\definecolor{darkgray}{RGB}{44, 62, 80}
+\definecolor{lightgray}{RGB}{236, 240, 241}
+\definecolor{codebg}{RGB}{248, 249, 250}
+\definecolor{codeborder}{RGB}{220, 221, 222}
+
+% Configuration des listes
+\setlist[itemize]{leftmargin=*, itemsep=0.5em}
+\setlist[enumerate]{leftmargin=*, itemsep=0.5em}
+
+% Configuration des liens
+\hypersetup{
+    colorlinks=true,
+    linkcolor=primaryblue,
+    urlcolor=secondaryblue,
+    citecolor=accentgreen
+}
+
+% En-têtes et pieds de page
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\textcolor{primaryblue}{\textbf{Projet Automatisation E-commerce}}}
+\fancyhead[R]{\textcolor{darkgray}{Ahmed AbdDAyem AHMEDBOUHA \& Moussa Mahmoud BA}}
+\fancyfoot[C]{\textcolor{darkgray}{\thepage}}
+\renewcommand{\headrulewidth}{2pt}
+\renewcommand{\headrule}{\hbox to\headwidth{\color{primaryblue}\leaders\hrule height \headrulewidth\hfill}}
+
+% Configuration des titres
+\titleformat{\section}
+{\color{primaryblue}\Large\bfseries}
+{\color{primaryblue}\thesection}{1em}{}
+[\color{primaryblue}\titlerule]
+
+\titleformat{\subsection}
+{\color{secondaryblue}\large\bfseries}
+{\color{secondaryblue}\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\color{darkgray}\normalsize\bfseries}
+{\color{darkgray}\thesubsubsection}{1em}{}
+
+% Configuration des blocs de code TypeScript
+\lstset{
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{accentgreen},
+    keywordstyle=\color{primaryblue}\bfseries,
+    numberstyle=\tiny\color{darkgray},
+    stringstyle=\color{warningorange},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{codeborder},
+    language=TypeScript
+}
+
+% Style pour HTML
+\lstdefinestyle{html}{
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{accentgreen},
+    keywordstyle=\color{primaryblue}\bfseries,
+    numberstyle=\tiny\color{darkgray},
+    stringstyle=\color{warningorange},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{codeborder},
+    language=HTML
+}
+
+% Style pour bash
+\lstdefinestyle{bash}{
+    backgroundcolor=\color{codebg},
+    commentstyle=\color{accentgreen},
+    keywordstyle=\color{primaryblue}\bfseries,
+    numberstyle=\tiny\color{darkgray},
+    stringstyle=\color{warningorange},
+    basicstyle=\ttfamily\small,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2,
+    frame=single,
+    rulecolor=\color{codeborder},
+    language=bash
+}
+
+% Style pour les blocs d'information
+\newtcolorbox{infobox}{
+    colback=lightgray,
+    colframe=primaryblue,
+    boxrule=2pt,
+    arc=3pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt
+}
+
+\newtcolorbox{warningbox}{
+    colback=warningorange!10,
+    colframe=warningorange,
+    boxrule=2pt,
+    arc=3pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt
+}
+
+\newtcolorbox{successbox}{
+    colback=accentgreen!10,
+    colframe=accentgreen,
+    boxrule=2pt,
+    arc=3pt,
+    left=10pt,
+    right=10pt,
+    top=10pt,
+    bottom=10pt
+}
+
+\begin{document}
+
+% Page de titre moderne
+\begin{titlepage}
+\centering
+\vspace*{2cm}
+
+% Logo/Titre principal
+{\Huge\bfseries\color{primaryblue}Projet d'Automatisation E-commerce}\\[0.5cm]
+{\Large\color{secondaryblue}Robot Framework \& SeleniumLibrary pour la recherche produits}\\[2cm]
+
+% Informations étudiant
+\begin{tcolorbox}[colback=lightgray, colframe=primaryblue, boxrule=2pt, arc=3pt, width=0.6\textwidth]
+\centering
+\vspace{0.5cm}
+{\large\bfseries\color{darkgray}Établissement :}\\[0.3cm]
+{\LARGE\color{primaryblue}ENET'COM}\\[0.5cm]
+{\large\bfseries\color{darkgray}Étudiants :}\\[0.3cm]
+{\LARGE\color{primaryblue}Ahmed AbdDAyem AHMEDBOUHA}\\[0.2cm]
+{\Large\color{secondaryblue}Moussa Mahmoud BA}\\[0.5cm]
+{\large\color{darkgray}Classe : 3 GT TST}\\[0.3cm]
+{\large\color{darkgray}Enseignante : Mme INES Jemal}\\[0.3cm]
+{\large\color{darkgray}Année universitaire : 2024/2025}
+\vspace{0.5cm}
+\end{tcolorbox}
+
+\vfill
+
+\end{titlepage}
+
+\newpage
+\tableofcontents
+\newpage
+
+\section{Introduction}
+
+\begin{infobox}
+\textbf{Objectif du TP :} Ce compte-rendu présente les résultats du Travail Pratique (TP4) portant sur la création d'une application CRUD (Create, Read, Update, Delete) de gestion des produits en utilisant Angular, les Services, l'Injection de Dépendances, HttpClient et JSON Server.
+\end{infobox}
+
+Angular est un framework \textbf{open source} (écrit en TypeScript) pour développer des applications web modernes. Ce TP se concentre sur :
+
+\begin{multicols}{2}
+\begin{itemize}
+\item \textcolor{primaryblue}{\textbf{Application CRUD}} - Opérations de base sur les données
+\item \textcolor{accentgreen}{\textbf{Les Services}} - Logique métier réutilisable
+\item \textcolor{warningorange}{\textbf{Injection de Dépendances}} - Gestion automatique des dépendances
+\item \textcolor{secondaryblue}{\textbf{HttpClient}} - Communication avec le backend
+\item \textcolor{darkgray}{\textbf{JSON Server}} - Backend REST API simulé
+\end{itemize}
+\end{multicols}
+
+\begin{successbox}
+\textbf{Angular Framework :} Framework JavaScript/TypeScript développé par Google pour créer des applications web dynamiques et performantes.
+
+\textbf{Page officielle :} \url{https://angular.io}
+\end{successbox}
+
+\subsection{Objectifs du TP}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{3cm}|p{9cm}|}
+\hline
+\rowcolor{primaryblue!20}
+\textbf{Objectif} & \textbf{Description} \\
+\hline
+\textcolor{primaryblue}{\textbf{Application CRUD}} & Créer une application complète de gestion de produits \\
+\hline
+\textcolor{accentgreen}{\textbf{Les Services}} & Comprendre et utiliser les services Angular \\
+\hline
+\textcolor{warningorange}{\textbf{Injection de Dépendances}} & Maîtriser l'injection de dépendances \\
+\hline
+\textcolor{secondaryblue}{\textbf{HttpClient}} & Communiquer avec une API REST \\
+\hline
+\textcolor{darkgray}{\textbf{JSON Server}} & Simuler un backend avec JSON Server \\
+\hline
+\end{tabular}
+\caption{Objectifs du TP4}
+\end{table}
+
+Les objectifs de ce TP étaient de :
+\begin{itemize}
+    \item \textcolor{primaryblue}{\textbf{Application CRUD}} - Créer une application de gestion des produits avec les opérations Create, Read, Update, Delete
+    \item \textcolor{accentgreen}{\textbf{Les Services}} - Créer et utiliser un service pour gérer les produits
+    \item \textcolor{warningorange}{\textbf{Injection de Dépendances}} - Injecter les services dans les composants
+    \item \textcolor{secondaryblue}{\textbf{HttpClient}} - Utiliser HttpClient pour les requêtes HTTP
+    \item \textcolor{darkgray}{\textbf{JSON Server}} - Configurer et utiliser JSON Server comme backend
+\end{itemize}
+
+\section{Panorama des projets d'automatisation}
+
+\begin{infobox}
+Cette section synthétise les cinq projets pratiques réalisés avec Ahmed AbdDAyem AHMEDBOUHA et Moussa Mahmoud BA. Ils couvrent la validation de formulaires, la recherche e-commerce, la navigation web, l'intégration base de données et la manipulation de fichiers.
+\end{infobox}
+
+\subsection{Projet 1 : Test et validation d'un formulaire}
+\begin{itemize}
+    \item Vérifier exactitude, complétude et cohérence des champs (Nom, Email, Message).
+    \item Couvrir validation client/serveur, messages d'erreur clairs et performance de soumission.
+    \item Automatiser avec Robot Framework \& SeleniumLibrary via RIDE; générer des rapports d'exécution.
+\end{itemize}
+
+\subsection{Projet 2 : Automatisation de la recherche e-commerce}
+\begin{itemize}
+    \item Tester la fiabilité de la recherche produits (termes valides, catégorie, aucun résultat, correspondance partielle).
+    \item Utiliser SeleniumLibrary pour saisir, lancer et vérifier les résultats; reporter automatiquement.
+    \item Objectifs clés : détection précoce d'erreurs, gain de temps et expérience utilisateur optimisée.
+\end{itemize}
+
+\subsection{Projet 3 : Validation de navigation sur un site web}
+\begin{itemize}
+    \item Garantir une navigation fluide et accessible sur plusieurs navigateurs et appareils.
+    \item Vérifier liens, menus, titres de pages et détection de liens brisés.
+    \item Tester des parcours utilisateurs typiques (Services, About Us, Contact, Home).
+\end{itemize}
+
+\subsection{Projet 4 : Tests d'intégration avec base de données}
+\begin{itemize}
+    \item Couvrir CRUD, cohérence des données et gestion des transactions.
+    \item Mesurer performances des requêtes et sécuriser contre les injections SQL.
+    \item Valider différents scénarios métier via requêtes SQL de vérification.
+\end{itemize}
+
+\subsection{Projet 5 : Tests de manipulation de fichiers}
+\begin{itemize}
+    \item Automatiser création, lecture, écriture, déplacement, renommage et suppression de fichiers.
+    \item Contrôler gestion des formats, cas limites (tailles, noms spéciaux) et erreurs d'accès.
+    \item Utiliser Selenium \& OperatingSystem pour assurer robustesse multiplateforme.
+\end{itemize}
+
+\section{Application CRUD Angular}
+
+\begin{infobox}
+\textbf{Application CRUD :} Une application CRUD en Angular est une application qui permet de gérer des données en effectuant les quatre opérations de base : Créer (Create), Lire (Read), Mettre à jour (Update), et Supprimer (Delete).
+\end{infobox}
+
+\subsection{Les opérations CRUD}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{2cm}|p{4cm}|p{6cm}|}
+\hline
+\rowcolor{primaryblue!20}
+\textbf{Opération} & \textbf{Méthode HTTP} & \textbf{Description} \\
+\hline
+\textcolor{primaryblue}{\textbf{Create}} & POST & Envoyer une requête POST au backend pour sauvegarder une nouvelle entrée \\
+\hline
+\textcolor{accentgreen}{\textbf{Read}} & GET & Envoyer une requête GET pour récupérer les données depuis la base de données \\
+\hline
+\textcolor{warningorange}{\textbf{Update}} & PUT/PATCH & Envoyer une requête PUT ou PATCH avec les nouvelles données pour mettre à jour l'entrée \\
+\hline
+\textcolor{secondaryblue}{\textbf{Delete}} & DELETE & Envoyer une requête DELETE pour retirer l'entrée correspondante de la base de données \\
+\hline
+\end{tabular}
+\caption{Les quatre opérations CRUD}
+\end{table}
+
+\subsection{Configuration du module principal (app.module.ts)}
+
+\begin{successbox}
+\texttt{app.module.ts} : Le module racine de l'application. Pour notre application CRUD, nous devons importer \texttt{HttpClientModule} pour permettre les requêtes HTTP, ainsi que \texttt{FormsModule} et \texttt{ReactiveFormsModule} pour les formulaires.
+\end{successbox}
+
+\begin{lstlisting}[caption=Configuration du module principal (app.module.ts)]
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductsComponent } from './components/products/products.component';
+import { NavBarComponent } from './components/nav-bar/nav-bar.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    ProductEditComponent,
+    ProductAddComponent,
+    ProductsComponent,
+    NavBarComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+\end{lstlisting}
+
+\subsection{Configuration du routing (app-routing.module.ts)}
+
+\begin{infobox}
+\texttt{app-routing.module.ts} : Module dédié à la gestion du routage. Pour notre application CRUD, nous configurons les routes pour la liste des produits, l'ajout et la modification.
+\end{infobox}
+
+\begin{lstlisting}[caption=Configuration du module de routing (app-routing.module.ts)]
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { ProductsComponent } from './components/products/products.component';
+import { ProductAddComponent } from './components/product-add/product-add.component';
+import { ProductEditComponent } from './components/product-edit/product-edit.component';
+
+const routes: Routes = [
+  { path: "products", component: ProductsComponent },
+  { path: "newProduct", component: ProductAddComponent },
+  { path: "EditProduct/:id", component: ProductEditComponent }
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+\end{lstlisting}
+
+\section{JSON Server}
+
+\begin{infobox}
+\textbf{JSON Server :} JSON Server est un outil qui permet de créer rapidement un serveur REST API à partir d'un fichier JSON. Il est parfait pour le développement et le prototypage d'applications Angular.
+\end{infobox}
+
+\subsection{Architecture Frontend/Backend}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{8cm}|}
+\hline
+\rowcolor{primaryblue!20}
+\textbf{Composant} & \textbf{Rôle} \\
+\hline
+\textcolor{primaryblue}{\textbf{Angular (Frontend)}} & S'exécute dans le navigateur, gère l'affichage, la navigation, les formulaires et la logique utilisateur \\
+\hline
+\textcolor{accentgreen}{\textbf{Backend}} & Gère les requêtes, effectue des calculs, accède aux bases de données et renvoie les données \\
+\hline
+\textcolor{warningorange}{\textbf{Communication}} & Angular utilise HttpClient pour envoyer des requêtes HTTP au backend \\
+\hline
+\end{tabular}
+\caption{Architecture Frontend/Backend}
+\end{table}
+
+\subsection{Installation et Configuration}
+
+Pour installer JSON Server globalement :
+\begin{lstlisting}[style=bash, caption=Installation de JSON Server]
+npm install -g json-server
+\end{lstlisting}
+
+Pour démarrer le serveur JSON :
+\begin{lstlisting}[style=bash, caption=Démarrage de JSON Server]
+json-server --watch db.json
+\end{lstlisting}
+
+Le serveur démarre sur \texttt{http://localhost:3000} et permet de consulter les données via l'API REST.
+
+\subsection{Création de la base de données (db.json)}
+
+Créez un fichier \texttt{db.json} à la racine du projet avec la structure suivante :
+
+\begin{lstlisting}[caption=Structure de db.json, language=json]
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "computer",
+      "price": "437",
+      "quantity": 600,
+      "selected": true,
+      "available": false
+    },
+    {
+      "id": "2",
+      "name": "Printer",
+      "price": "350",
+      "quantity": "0",
+      "selected": true,
+      "available": false
+    }
+  ]
+}
+\end{lstlisting}
+
+\section{Les Services en Angular}
+
+\begin{infobox}
+\textbf{Les Services :} Les services sont des classes en Angular qui contiennent de la logique ou des fonctionnalités spécifiques que l'on veut réutiliser dans plusieurs parties de l'application.
+\end{infobox}
+
+\subsection{Fonctionnement d'un service}
+
+Un service fonctionne en trois étapes :
+
+\begin{enumerate}
+    \item \textcolor{primaryblue}{\textbf{Création d'un service}} : On crée un service pour y placer du code réutilisable (connexion à une base de données, logique métier, etc.)
+    \item \textcolor{accentgreen}{\textbf{Injection de dépendance}} : Angular rend le service disponible (ou "injecte" le service) là où on en a besoin
+    \item \textcolor{warningorange}{\textbf{Appel des méthodes}} : Une fois le service injecté, on peut appeler ses méthodes pour exécuter des actions spécifiques
+\end{enumerate}
+
+\subsection{Injection des Dépendances}
+
+\begin{successbox}
+\textbf{Injection de Dépendances :} L'injection de dépendances est une façon pour Angular de fournir automatiquement ce dont un composant a besoin pour fonctionner, sans que le composant ait besoin de créer ces éléments lui-même.
+\end{successbox}
+
+\textbf{Avantages de l'injection de dépendances :}
+\begin{itemize}
+    \item \textcolor{primaryblue}{\textbf{Simplifie le code}} : Pas besoin de créer ou gérer les dépendances manuellement
+    \item \textcolor{accentgreen}{\textbf{Réutilisable}} : Le même service peut être injecté partout dans l'application
+    \item \textcolor{warningorange}{\textbf{Facilite la maintenance}} : Si on modifie une méthode dans le service, le changement est pris en compte partout automatiquement
+\end{itemize}
+
+\section{HttpClient}
+
+\begin{infobox}
+\textbf{HttpClient :} HttpClient est utilisé pour envoyer des requêtes HTTP dans Angular. Il doit être importé via \texttt{HttpClientModule} dans le module principal.
+\end{infobox}
+
+\subsection{Configuration de HttpClient}
+
+Pour utiliser HttpClient, il faut :
+\begin{enumerate}
+    \item Importer \texttt{HttpClientModule} dans \texttt{app.module.ts}
+    \item Injecter \texttt{HttpClient} dans les services pour effectuer des requêtes HTTP vers un backend
+\end{enumerate}
+
+\section{Création du Service ProductsService}
+
+\subsection{Génération du service}
+
+Pour créer le service, utilisez la commande :
+\begin{lstlisting}[style=bash, caption=Création du service ProductsService]
+ng generate service products
+\end{lstlisting}
+
+Cette commande crée deux fichiers : \texttt{products.service.ts} et \texttt{products.service.spec.ts}.
+
+\subsection{Implémentation du service}
+
+Le service \texttt{ProductsService} utilise \texttt{HttpClient} pour effectuer des appels HTTP vers l'API backend. Il fournit plusieurs méthodes pour gérer les produits :
+
+\begin{lstlisting}[caption=Service ProductsService (products.service.ts)]
+import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable, switchMap } from 'rxjs';
+import { Product } from './product';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ProductsService {
+  private readonly host = 'http://localhost:3000';
+  
+  constructor(private http: HttpClient) { }
+  
+  getAllProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.host}/products`);
+  }
+  
+  getSelectedProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.host}/products?selected=true`);
+  }
+  
+  getAvailableProducts(): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.host}/products?available=true`);
+  }
+  
+  searchProducts(keyword: string): Observable<Product[]> {
+    return this.http.get<Product[]>(`${this.host}/products?name_like=${keyword}`);
+  }
+  
+  select(product: Product): Observable<Product> {
+    product.selected = !product.selected;
+    return this.http.put<Product>(`${this.host}/products/${product.id}`, product);
+  }
+  
+  deleteProduct(product: Product): Observable<void> {
+    return this.http.delete<void>(`${this.host}/products/${product.id}`);
+  }
+  
+  save(product: any): Observable<any> {
+    return this.getAllProducts().pipe(
+      map((products: any[]) => {
+        const lastId = products.length ? 
+          Math.max(...products.map(p => parseInt(p.id))) : 0;
+        const newProduct = { ...product, id: (lastId + 1).toString() };
+        return newProduct;
+      }),
+      switchMap((newProduct) => 
+        this.http.post<any>(`${this.host}/products`, newProduct)
+      )
+    );
+  }
+  
+  getProduct(id: number): Observable<Product> {
+    return this.http.get<Product>(`${this.host}/products/${id}`);
+  }
+  
+  updateProduct(product: Product): Observable<Product> {
+    return this.http.put<Product>(`${this.host}/products/${product.id}`, product);
+  }
+}
+\end{lstlisting}
+
+\begin{infobox}
+\textbf{Méthodes du service :} Le service fournit des méthodes pour récupérer des produits (\texttt{getAllProducts}, \texttt{getSelectedProducts}, etc.), modifier un produit (\texttt{select}, \texttt{updateProduct}), ajouter un produit (\texttt{save}), et supprimer un produit (\texttt{deleteProduct}). Chaque méthode retourne un \texttt{Observable}, ce qui permet de gérer les opérations asynchrones.
+\end{infobox}
+
+\subsection{Interface Product}
+
+Avant d'utiliser le service, il faut définir l'interface \texttt{Product} :
+
+\begin{lstlisting}[caption=Interface Product (product.ts)]
+export interface Product {
+  id: number;
+  name: string;
+  price: number;
+  quantity: number;
+  selected: boolean;
+  available: boolean;
+}
+\end{lstlisting}
+
+\subsection{Gestion des états (product.state.ts)}
+
+Pour gérer les différents états de chargement des données, nous créons un fichier \texttt{product.state.ts} :
+
+\begin{lstlisting}[caption=Gestion des états (state/product.state.ts)]
+export enum DataStateEnum {
+  LOADING,
+  LOADED,
+  ERROR
+}
+
+export interface AppDataState<T> {
+  dataState: DataStateEnum; // État actuel des données
+  data?: T;                 // Données si disponibles
+  errorMessage?: string;    // Message d'erreur si erreur
+}
+\end{lstlisting}
+
+\section{Les Composants de l'Application}
+
+L'application CRUD comprend quatre composants principaux :
+
+\begin{enumerate}
+    \item \textcolor{primaryblue}{\textbf{NavBarComponent}} - Barre de navigation
+    \item \textcolor{accentgreen}{\textbf{ProductsComponent}} - Liste et gestion des produits
+    \item \textcolor{warningorange}{\textbf{ProductAddComponent}} - Ajout d'un nouveau produit
+    \item \textcolor{secondaryblue}{\textbf{ProductEditComponent}} - Modification d'un produit existant
+\end{enumerate}
+
+Pour créer ces composants, utilisez les commandes suivantes :
+
+\begin{lstlisting}[style=bash, caption=Création des composants]
+ng g c components/nav-bar
+ng g c components/products
+ng g c components/product-add
+ng g c components/product-edit
+\end{lstlisting}
+
+\subsection{Composant NavBar}
+
+Le composant \texttt{NavBarComponent} permet de créer une barre de navigation vers les différents composants de l'application.
+
+\begin{lstlisting}[style=html, caption=Template du NavBar (nav-bar.component.html)]
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark justify-content-center">
+  <a class="navbar-brand" href="#">
+    <img src="https://media.ccmbg.com/tc/4881385133/929330/1637230514" 
+         alt="Nom de la marque" width="100" height="60">
+  </a>
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" [routerLink]="['/products']" routerLinkActive="active">
+        <h1>Gestion des Produits</h1>
+      </a>
+    </li>
+  </ul>
+</nav>
+\end{lstlisting}
+
+\subsection{Composant Products}
+
+Le composant \texttt{ProductsComponent} est le composant principal qui permet de :
+\begin{itemize}
+    \item Lister tous les produits stockés dans la base de données
+    \item Filtrer les produits (tous, sélectionnés, disponibles)
+    \item Rechercher un produit par mot-clé
+    \item Sélectionner/désélectionner un produit
+    \item Supprimer un produit
+    \item Modifier un produit
+\end{itemize}
+
+\subsubsection{Implémentation TypeScript}
+
+\begin{lstlisting}[caption=Composant Products (products.component.ts)]
+import { Component, OnInit } from '@angular/core';
+import { ProductsService } from '../../products.service';
+import { Product } from '../../product';
+import { Observable, of } from 'rxjs';
+import { catchError, map, startWith } from 'rxjs/operators';
+import { AppDataState, DataStateEnum } from '../../state/product.state';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-products',
+  templateUrl: './products.component.html',
+  styleUrls: ['./products.component.css']
+})
+export class ProductsComponent implements OnInit {
+  products$: Observable<AppDataState<Product[]>> | null = null;
+  readonly DataStateEnum = DataStateEnum;
+  
+  constructor(
+    private productsService: ProductsService, 
+    private router: Router
+  ) { }
+  
+  ngOnInit(): void { }
+  
+  onGetAllProducts() {
+    this.products$ = this.productsService.getAllProducts().pipe(
+      map(data => ({ dataState: DataStateEnum.LOADED, data: data })),
+      startWith({ dataState: DataStateEnum.LOADING }),
+      catchError(err => of({ 
+        dataState: DataStateEnum.ERROR, 
+        errorMessage: err.message 
+      }))
+    );
+  }
+  
+  onGetSelectedProducts() {
+    this.products$ = this.productsService.getSelectedProducts().pipe(
+      map(data => ({ dataState: DataStateEnum.LOADED, data: data })),
+      startWith({ dataState: DataStateEnum.LOADING }),
+      catchError(err => of({ 
+        dataState: DataStateEnum.ERROR, 
+        errorMessage: err.message 
+      }))
+    );
+  }
+  
+  onGetAvailableProducts() {
+    this.products$ = this.productsService.getAvailableProducts().pipe(
+      map(data => ({ dataState: DataStateEnum.LOADED, data: data })),
+      startWith({ dataState: DataStateEnum.LOADING }),
+      catchError(err => of({ 
+        dataState: DataStateEnum.ERROR, 
+        errorMessage: err.message 
+      }))
+    );
+  }
+  
+  onSearchInput(dataForm: any) {
+    const keyword = dataForm?.keyword?.trim().toLowerCase();
+    if (!keyword || keyword === '') {
+      this.onGetAllProducts();
+      return;
+    }
+    this.products$ = this.productsService.searchProducts(keyword).pipe(
+      map(data => ({
+        dataState: DataStateEnum.LOADED,
+        data: data.filter(product => 
+          product.name.toLowerCase().includes(keyword)
+        )
+      })),
+      startWith({ dataState: DataStateEnum.LOADING }),
+      catchError(err => of({ 
+        dataState: DataStateEnum.ERROR, 
+        errorMessage: err.message 
+      }))
+    );
+  }
+  
+  onSelect(p: Product) {
+    this.productsService.select(p).subscribe(data => {
+      p.selected = data.selected;
+    });
+  }
+  
+  onDelete(p: Product) {
+    const confirmation = confirm("Are you sure?");
+    if (confirmation) {
+      this.productsService.deleteProduct(p).subscribe(() => {
+        this.onGetAllProducts();
+      });
+    }
+  }
+  
+  onNewProduct() {
+    this.router.navigateByUrl("/newProduct");
+  }
+  
+  onEdit(p: Product) {
+    this.router.navigateByUrl(`/EditProduct/${p.id}`);
+  }
+}
+\end{lstlisting}
+
+Avec les formulaires réactifs, un formulaire correspond toujours à un \texttt{FormGroup}, donc il faut tout d'abord définir la structure générale de notre formulaire dans le fichier TypeScript de notre composant à l'intérieur de la classe export.
+
+\subsubsection{Création du composant}
+
+Pour créer le composant, on utilise la commande :
+\begin{lstlisting}[style=bash, caption=Création du composant Reactive Form]
+ng generate component ReactiveFormComponent
+\end{lstlisting}
+
+\subsubsection{Implémentation du composant Reactive Form}
+
+Dans \texttt{reactive-form-component.component.ts}, on importe \texttt{FormGroup} et \texttt{FormControl} :
+
+\begin{lstlisting}[caption=Composant Reactive Form (reactive-form-component.component.ts)]
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+
+@Component({
+  selector: 'app-reactive-form-component',
+  templateUrl: './reactive-form-component.component.html',
+  styleUrl: './reactive-form-component.component.css'
+})
+export class ReactiveFormComponentComponent {
+  myForm: FormGroup;
+  
+  constructor() {
+    this.myForm = new FormGroup({
+      name: new FormControl("", [Validators.required]),
+      email: new FormControl("", [Validators.required, Validators.email]),
+      password: new FormControl("", [Validators.required, Validators.minLength(6)])
+    });
+  }
+  
+  onSubmit() {
+    if (this.myForm.valid) {
+      console.log(this.myForm.value);
+    } else {
+      console.log("form not valid");
+    }
+  }
+}
+\end{lstlisting}
+
+La variable \texttt{myForm} présente alors la structure de notre formulaire qui contient 3 champs : \texttt{name}, \texttt{email}, \texttt{password}. Le \texttt{new FormControl('')} signifie que ce champ est de type string, dans laquelle on insère des textes ou des caractères.
+
+Le bouton Submit est indispensable pour les formulaires.
+
+\subsubsection{Template HTML du Reactive Form}
+
+Maintenant dans votre template (.html), on doit utiliser les balises \texttt{<form>} pour créer notre formulaire et ajouter les attributs.
+
+\begin{lstlisting}[style=html, caption=Template HTML initial du Reactive Form]
+<p>reactive-form-component works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name">
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email">
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password">
+    <button type="submit">Submit</button>
+</form>
+\end{lstlisting}
+
+Pour visualiser votre composant, ajouter dans \texttt{app.component.html} (selon votre selector dans .ts) :
+\begin{lstlisting}[style=html, caption=Ajout du composant dans app.component.html]
+<app-reactive-form-component></app-reactive-form-component>
+\end{lstlisting}
+
+\begin{warningbox}
+\textbf{Remarque :} L'affichage des données saisies sont affichées dans le console de votre navigateur (F12).
+\end{warningbox}
+
+\subsection{Template Form (3. Template Form)}
+
+\begin{infobox}
+\textbf{Template Forms :} Les formulaires de template forms reposent sur le module \texttt{FormsModule}.
+\end{infobox}
+
+\subsubsection{Configuration dans app.module.ts}
+
+Dans \texttt{app.module.ts}, on doit importer \texttt{FormsModule} :
+
+\subsubsection{Création du composant}
+
+Pour créer le composant, on utilise la commande :
+\begin{lstlisting}[style=bash, caption=Création du composant Template Form]
+ng generate component TemplateFormComponent
+\end{lstlisting}
+
+\subsubsection{Implémentation du composant Template Form}
+
+Dans le modèle de votre composant, dans votre code TypeScript :
+
+\begin{lstlisting}[caption=Composant Template Form (template-form-componet.component.ts)]
+import { Component } from '@angular/core';
+
+@Component({
+  selector: 'app-template-form-componet',
+  templateUrl: './template-form-componet.component.html',
+  styleUrl: './template-form-componet.component.css'
+})
+export class TemplateFormComponetComponent {
+  onSubmit(form: any) {
+    console.log(form.value);
+  }
+}
+\end{lstlisting}
+
+\subsubsection{Template HTML du Template Form}
+
+Dans la template (.html), vous devez utiliser des directives Angular telles que \texttt{ngModel} et \texttt{ngForm} pour lier les champs de formulaire aux propriétés du composant.
+
+\begin{lstlisting}[style=html, caption=Template HTML du Template Form]
+<p>template-form-component works!</p>
+<h2>Template-Driven Form</h2>
+<form #userForm="ngForm" (ngSubmit)="onSubmit(userForm)">
+    <label for="name">Name:</label>
+    <input id="name" name="name" ngModel required>
+    <div *ngIf="userForm.controls['name']?.invalid && 
+        userForm.controls['name']?.touched">
+        Name is required.
+    </div>
+    <label for="email">Email:</label>
+    <input id="email" name="email" ngModel required email>
+    <div *ngIf="userForm.controls['email']?.invalid && 
+        userForm.controls['email']?.touched">
+        Enter a valid email.
+    </div>
+    <label for="age">Age:</label>
+    <input id="age" name="age" ngModel required type="number" min="18">
+    <div *ngIf="userForm.controls['age']?.invalid && 
+        userForm.controls['age']?.touched">
+        Age must be at least 18.
+    </div>
+    <button type="submit" [disabled]="userForm.invalid">Submit</button>
+</form>
+\end{lstlisting}
+
+\subsection{Les validateurs de formulaires}
+
+\begin{infobox}
+\textbf{Validateurs :} Les validateurs dans un formulaire réactif Angular sont des fonctions qui vérifient la validité des données saisies par l'utilisateur. Ils permettent de définir des règles de validation pour les champs d'un formulaire, comme l'obligation de remplir un champ ou le respect d'un certain format (comme une adresse email).
+\end{infobox}
+
+\subsubsection{Types de validateurs}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{8cm}|}
+\hline
+\rowcolor{primaryblue!20}
+\textbf{Type de Validateur} & \textbf{Description} \\
+\hline
+\textcolor{primaryblue}{\textbf{Validateurs intégrés}} & Fournis par Angular (required, email, minLength, etc.) \\
+\hline
+\textcolor{accentgreen}{\textbf{Validateurs personnalisés}} & Fonctions créées par l'utilisateur pour règles spécifiques \\
+\hline
+\end{tabular}
+\caption{Types de validateurs dans Angular}
+\end{table}
+
+\textbf{a. Validateurs intégrés (built-in validators)} : Ce sont les validateurs fournis par Angular, tels que :
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item \textcolor{primaryblue}{\texttt{Validators.required}} : Le champ doit être rempli
+    \item \textcolor{accentgreen}{\texttt{Validators.minLength(length)}} : Nombre minimum de caractères
+    \item \textcolor{warningorange}{\texttt{Validators.maxLength(length)}} : Nombre maximum de caractères
+    \item \textcolor{secondaryblue}{\texttt{Validators.email}} : Adresse email valide
+    \item \textcolor{darkgray}{\texttt{Validators.pattern(pattern)}} : Motif particulier (regex)
+\end{itemize}
+\end{multicols}
+
+\textbf{b. Validateurs personnalisés (custom validators)} : Ce sont des fonctions créées par l'utilisateur pour ajouter des règles de validation spécifiques. Ils permettent de définir des validations qui ne sont pas couvertes par les validateurs intégrés.
+
+\subsubsection{Modification du code TypeScript pour ajouter les validateurs}
+
+\begin{lstlisting}[caption=Ajout des validateurs dans le composant]
+myForm: FormGroup;
+
+constructor() {
+  this.myForm = new FormGroup({
+    name: new FormControl("", [Validators.required]),
+    email: new FormControl("", [Validators.required, Validators.email]),
+    password: new FormControl("", [Validators.required, Validators.minLength(6)])
+  });
+}
+
+onSubmit() {
+  if (this.myForm.valid) {
+    console.log(this.myForm.value);
+  }
+}
+\end{lstlisting}
+
+\subsubsection{Affichage des messages d'erreur dans le template}
+
+Maintenant, il faut donc afficher un message d'erreur au niveau template.html :
+
+\begin{lstlisting}[style=html, caption=Template avec messages d'erreur basiques]
+<p>reactive-form-component works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name">
+    <div *ngIf="myForm.get('name')?.invalid">
+        Name is required.
+    </div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email">
+    <div *ngIf="myForm.get('email')?.invalid">
+        Enter a valid email.
+    </div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password">
+    <div *ngIf="myForm.get('password')?.invalid">
+        Password must be at least 6 characters.
+    </div>
+    <button type="submit">Submit</button>
+</form>
+\end{lstlisting}
+
+\subsubsection{Utilisation de Touch \& Dirty}
+
+\begin{infobox}
+\textbf{Touch \& Dirty :} On utilise Touch \& Dirty cela nous permet d'afficher les messages d'erreur au bon moment (lorsque les champs sont touchés ou modifiés).
+\end{infobox}
+
+\begin{lstlisting}[style=html, caption=Template avec Touch et Dirty]
+<p>reactive-form-component works!</p>
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label for="name">Name:</label>
+    <input id="name" formControlName="name">
+    <div *ngIf="myForm.get('name')?.invalid && 
+        (myForm.get('name')?.touched || myForm.get('name')?.dirty)">
+        Name is required.
+    </div>
+    <label for="email">Email:</label>
+    <input id="email" formControlName="email">
+    <div *ngIf="myForm.get('email')?.invalid && 
+        (myForm.get('email')?.touched || myForm.get('email')?.dirty)">
+        Enter a valid email.
+    </div>
+    <label for="password">Password:</label>
+    <input id="password" formControlName="password" type="password">
+    <div *ngIf="myForm.get('password')?.invalid && 
+        (myForm.get('password')?.touched || myForm.get('password')?.dirty)">
+        Password must be at least 6 characters.
+    </div>
+    <button type="submit">Submit</button>
+</form>
+\end{lstlisting}
+
+Modifier votre Template pour éviter le cas où l'utilisateur touche le bouton Submit sans même toucher les autres parties. Dans notre implémentation finale, nous avons ajouté la vérification de \texttt{valid} dans le bouton :
+
+\begin{lstlisting}[style=html, caption=Bouton avec validation]
+<button type="submit" [disabled]="myForm.invalid">Submit</button>
+\end{lstlisting}
+
+\subsubsection{Exercice : Formulaire Réactive Form with changeValue}
+
+\begin{successbox}
+\textbf{Exercice :} Veuillez créer le formulaire Réactive Form with changeValue.
+
+L'exercice consiste à créer un formulaire permettant de calculer le prix total en fonction du prix unitaire et de la quantité.
+\end{successbox}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{4cm}|p{6cm}|}
+\hline
+\rowcolor{accentgreen!20}
+\textbf{Champ} & \textbf{Valeur exemple} \\
+\hline
+\textcolor{primaryblue}{\textbf{Price en DT}} & 15.630 \\
+\hline
+\textcolor{accentgreen}{\textbf{Quantity}} & 10 \\
+\hline
+\textcolor{warningorange}{\textbf{Total Price}} & 156.3 \\
+\hline
+\end{tabular}
+\caption{Exemple attendu pour l'exercice}
+\end{table}
+
+\paragraph{Implémentation}
+
+Dans notre implémentation, nous avons créé un composant utilisant Template Driven Forms (comme suggéré dans l'exercice) avec un calcul automatique du prix total :
+
+\begin{lstlisting}[caption=Composant Exercice (exercicer-component.component.ts)]
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, NgForm, Validators } 
+    from '@angular/forms';
+
+@Component({
+  selector: 'app-exercicer-component',
+  templateUrl: './exercicer-component.component.html',
+  styleUrl: './exercicer-component.component.css'
+})
+export class ExercicerComponentComponent {
+  product = {
+    price: 0 as number | null,
+    quantity: 1 as number | null
+  };
+
+  get totalPrice(): number {
+    const p = Number(this.product.price) || 0;
+    const q = Number(this.product.quantity) || 0;
+    return p * q;
+  }
+
+  onSubmit(form: NgForm) {
+    if (!form.valid) return;
+    console.log('Form submitted', { 
+      ...this.product, 
+      total: this.totalPrice 
+    });
+  }
+}
+\end{lstlisting}
+
+\begin{lstlisting}[style=html, caption=Template HTML de l'exercice]
+<p>exercicer-component works!</p>
+<h2>Template exercicer-component</h2>
+<form #myForm="ngForm" (ngSubmit)="onSubmit(myForm)">
+
+    <label for="price"> Price (DT):</label>
+    <input id="price" name="price" type="number" step="0.01" min="0" 
+        [(ngModel)]="product.price" #priceCtrl="ngModel" ngModel required>
+    <div *ngIf="myForm.submitted && priceCtrl.invalid && priceCtrl.touched">
+        Enter a valid price.
+    </div>
+  <br>
+
+    <label for="quantity"> Quantity:</label>
+    <input id="quantity" name="quantity" type="number" min="1" 
+        [(ngModel)]="product.quantity" #qtyCtrl="ngModel" ngModel required>
+    <div *ngIf="myForm.submitted && qtyCtrl.invalid && qtyCtrl.touched">
+        Enter a valid quantity (at least 1).
+    </div>
+  <br>
+
+    <label>Total Price (DT):</label>
+    <input type="text" [value]="totalPrice | number:'1.2-2'" readonly>
+  <br><br>
+
+    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+</form>
+\end{lstlisting}
+
+\paragraph{Fonctionnalités implémentées}
+
+\begin{itemize}
+    \item Formulaire Template Driven avec validation
+    \item Calcul automatique du prix total (prix × quantité) via un getter
+    \item Affichage du total formaté avec 2 décimales
+    \item Validation des champs (prix et quantité requis)
+    \item Messages d'erreur affichés après soumission si les champs sont invalides
+\end{itemize}
+
+\section{Le Routing (III- Le routing)}
+
+\begin{infobox}
+\textbf{Routing Angular :} Pour basculer entre vos deux composants (formulaire Template-Driven et formulaire Réactif), vous devez implémenter le routing. Le routage vous permet de naviguer entre différentes pages ou composants en fonction de l'URL.
+\end{infobox}
+
+\subsection{Étapes pour mettre en place le routage}
+
+\subsubsection{Étape 1 : Importer AppRoutingModule dans app.module.ts}
+
+Ensuite, vous devez importer et ajouter \texttt{AppRoutingModule} dans votre module principal (\texttt{app.module.ts}).
+
+\begin{lstlisting}[caption=Importation de AppRoutingModule dans app.module.ts]
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { AppComponent } from './app.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormComponentComponent } from 
+    './reactive-form-component/reactive-form-component.component';
+import { TemplateFormComponentComponent } from 
+    './template-form-component/template-form-component.component';
+import { FormsModule } from '@angular/forms'; // <-- Importation de FormsModule
+import { AppRoutingModule } from './app-routing.module';
+import { ExerciceComponent } from './exercice/exercice.component';
+
+@NgModule({
+  imports: [BrowserModule, ReactiveFormsModule, FormsModule, AppRoutingModule],
+  declarations: [AppComponent, ReactiveFormComponentComponent,
+      TemplateFormComponentComponent, ExerciceComponent],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+\end{lstlisting}
+
+\subsubsection{Étape 2 : Créer des routes pour les composants}
+
+Dans \texttt{app-routing.module.ts} : ajouter les importations des composants et puis les routes path et le composant.
+
+\begin{lstlisting}[caption=Configuration des routes dans app-routing.module.ts]
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
+import { TemplateFormComponentComponent } from 
+    './template-form-component/template-form-component.component';
+import { ReactiveFormComponentComponent } from 
+    './reactive-form-component/reactive-form-component.component';
+import { ExerciceComponent } from './exercice/exercice.component';
+
+const routes: Routes = [
+  { path: 'template-form', component: TemplateFormComponentComponent },
+  { path: 'reactive-form', component: ReactiveFormComponentComponent },
+  { path: 'exercice-form', component: ExerciceComponent },
+  { path: '', redirectTo: '/template-form', pathMatch: 'full' } 
+  // Redirection par défaut
+];
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+\end{lstlisting}
+
+\subsubsection{Étape 3 : Ajouter des liens de navigation dans le template principal app.component.html}
+
+Pour que l'utilisateur puisse naviguer entre le formulaire Template-Driven, le formulaire Réactif, et l'exercice déjà fait. Vous pouvez ajouter des liens dans votre template principal.
+
+\begin{lstlisting}[style=html, caption=Template principal avec navigation (app.component.html)]
+<h1>Angular Forms Example</h1>
+<nav>
+    <ul>
+        <li><a routerLink="/template-form">Template-Driven Form</a></li>
+        <li><a routerLink="/reactive-form">Reactive Form</a></li>
+    </ul>
+</nav>
+<!-- Zone où les composants seront affichés -->
+<router-outlet></router-outlet>
+\end{lstlisting}
+
+L'élément \texttt{<router-outlet>} est utilisé pour afficher dynamiquement le composant correspondant à l'URL actuelle.
+
+\begin{itemize}
+    \item Lorsque l'utilisateur clique sur "Template-Driven Form", le composant \texttt{TemplateFormComponent} sera affiché.
+    \item Lorsque l'utilisateur clique sur "Reactive Form", le composant \texttt{ReactiveFormComponent} sera affiché.
+\end{itemize}
+
+
+\section{Captures d'écran}
+
+\subsection{Accueil - Liste des produits}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/homepage.png}
+    \caption{\textcolor{primaryblue}{\textbf{Figure 1 :}} Accueil avec la liste complète des produits}
+    \label{fig:homepage}
+\end{figure}
+
+\subsection{Filtre sur les produits sélectionnés}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/filter-selected.png}
+    \caption{\textcolor{accentgreen}{\textbf{Figure 2 :}} Filtrage sur les produits \textit{Selected}}
+    \label{fig:filter-selected}
+\end{figure}
+
+\subsection{Filtre sur les produits disponibles}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/filter-available.png}
+    \caption{\textcolor{warningorange}{\textbf{Figure 3 :}} Filtrage sur les produits \textit{Available}}
+    \label{fig:filter-available}
+\end{figure}
+
+\subsection{Recherche par mot-clé}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/search.png}
+    \caption{\textcolor{secondaryblue}{\textbf{Figure 4 :}} Recherche en temps réel dans la liste}
+    \label{fig:search}
+\end{figure}
+
+\subsection{Formulaire d'ajout d'un produit}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/add-product-form.png}
+    \caption{\textcolor{primaryblue}{\textbf{Figure 5 :}} Formulaire d'ajout (ProductAddComponent)}
+    \label{fig:add-product-form}
+\end{figure}
+
+\subsection{Formulaire d'édition d'un produit}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/edit-product-form.png}
+    \caption{\textcolor{accentgreen}{\textbf{Figure 6 :}} Formulaire d'édition (ProductEditComponent)}
+    \label{fig:edit-product-form}
+\end{figure}
+
+\subsection{Actions sur un produit (Select/Delete/Edit)}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/select-delete-edit-actions.png}
+    \caption{\textcolor{warningorange}{\textbf{Figure 7 :}} Boutons Select/Unselect, Delete, Edit sur la liste}
+    \label{fig:actions}
+\end{figure}
+
+\subsection{API JSON Server}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/backend-json.png}
+    \caption{\textcolor{secondaryblue}{\textbf{Figure 8 :}} Données retournées par \texttt{http://localhost:3000/products}}
+    \label{fig:backend-json}
+\end{figure}
+
+\section{Conclusion}
+
+\begin{infobox}
+\textbf{Acquis du TP :} Ce travail pratique a permis d'acquérir une compréhension approfondie des concepts fondamentaux d'Angular.
+\end{infobox}
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|p{5cm}|p{7cm}|}
+\hline
+\rowcolor{primaryblue!20}
+\textbf{Concept maîtrisé} & \textbf{Application pratique} \\
+\hline
+\textcolor{primaryblue}{\textbf{Modules}} & Architecture modulaire (app.module.ts, app-routing.module.ts) \\
+\hline
+\textcolor{accentgreen}{\textbf{Formulaires}} & Reactive Forms et Template Driven Forms \\
+\hline
+\textcolor{warningorange}{\textbf{Validateurs}} & Validateurs intégrés et utilisation de Touch \& Dirty \\
+\hline
+\textcolor{secondaryblue}{\textbf{Routing}} & Navigation entre composants selon l'URL \\
+\hline
+\textcolor{darkgray}{\textbf{Exercice}} & Formulaire interactif avec calcul automatique \\
+\hline
+\end{tabular}
+\caption{Compétences acquises lors du TP}
+\end{table}
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item \textcolor{primaryblue}{\textbf{Architecture modulaire}} - Comprendre app.module.ts et app-routing.module.ts
+    \item \textcolor{accentgreen}{\textbf{Deux approches}} - Reactive Forms et Template Driven Forms
+    \item \textcolor{warningorange}{\textbf{Validation}} - Validateurs intégrés et Touch \& Dirty
+    \item \textcolor{secondaryblue}{\textbf{Routing}} - Navigation entre composants
+    \item \textcolor{darkgray}{\textbf{Formulaires interactifs}} - Calcul automatique de valeurs
+\end{itemize}
+\end{multicols}
+
+\begin{successbox}
+\textbf{Conclusion :} Les concepts appris dans ce TP sont essentiels pour développer des applications Angular robustes et maintenables. La séparation entre Reactive Forms et Template Driven Forms permet de choisir l'approche la plus adaptée selon la complexité du projet. Le routing permet de structurer l'application de manière modulaire et professionnelle.
+\end{successbox}
+
+\end{document}

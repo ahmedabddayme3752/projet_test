@@ -1,62 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lumina | Next Gen Tech</title>
+    <title>E-commerce | Next Gen Tech</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <nav class="navbar">
-        <div class="logo">Lumina<span class="dot">.</span></div>
+        <div class="logo">E-commerce<span class="dot">.</span></div>
         <div class="search-container">
             <i class="fas fa-search search-icon"></i>
-            <input type="text" id="search-input" placeholder="Search for products...">
+            <input type="text" id="search-input" placeholder="Search for premium gear...">
         </div>
         <div class="nav-links">
-            <a href="#" class="active">Home</a>
-            <a href="#">Products</a>
-            <a href="#">Cart <span class="cart-count">0</span></a>
+            <a href="#" class="nav-item active">Home</a>
+            <a href="#products" class="nav-item">Products</a>
+            <a href="#" class="nav-item cart-btn">
+                <i class="fas fa-shopping-bag"></i>
+                <span class="cart-count">0</span>
+            </a>
+        </div>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
         </div>
     </nav>
 
     <header class="hero">
         <div class="hero-content">
-            <h1>Future of Tech</h1>
-            <p>Experience premium electronics designed for the modern era.</p>
-            <button class="cta-btn">Explore Now</button>
+            <span class="hero-badge">New Arrival</span>
+            <h1>Experience the <br><span class="gradient-text">Future of Tech</span></h1>
+            <p>Discover our curated collection of premium electronics designed for the modern creator.</p>
+            <div class="hero-btns">
+                <button class="cta-btn primary">Explore Collection</button>
+                <button class="cta-btn secondary">View Details</button>
+            </div>
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-num">2k+</span>
+                    <span class="stat-label">Products</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">10k+</span>
+                    <span class="stat-label">Customers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">4.9</span>
+                    <span class="stat-label">Rating</span>
+                </div>
+            </div>
+        </div>
+        <div class="hero-visual">
+            <div class="visual-circle"></div>
+            <img src="https://images.unsplash.com/photo-1550009158-9ebf69173e03?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+                alt="Premium Tech" class="hero-img floating">
         </div>
     </header>
 
-    <main class="container">
+    <main class="container" id="products">
         <div class="section-header">
-            <h2>Trending Products</h2>
+            <div class="header-content">
+                <h2>Trending Products</h2>
+                <p>Hand-picked for quality and performance</p>
+            </div>
             <div class="filter-tags">
-                <span class="tag active">All</span>
-                <span class="tag">Laptops</span>
-                <span class="tag">Audio</span>
-                <span class="tag">Wearables</span>
+                <button class="tag active" data-category="all">All</button>
+                <button class="tag" data-category="laptops">Laptops</button>
+                <button class="tag" data-category="audio">Audio</button>
+                <button class="tag" data-category="wearables">Wearables</button>
             </div>
         </div>
-        
+
         <div id="product-grid" class="product-grid">
             <!-- Products will be injected here by JS -->
         </div>
-        
+
         <div id="no-results" class="no-results hidden">
-            <i class="far fa-frown"></i>
-            <p>No products found matching your search.</p>
+            <div class="no-results-content">
+                <i class="far fa-frown"></i>
+                <h3>No products found</h3>
+                <p>Try adjusting your search or filter to find what you're looking for.</p>
+                <button class="reset-btn">Reset Filters</button>
+            </div>
         </div>
     </main>
 
+    <section class="newsletter">
+        <div class="newsletter-content">
+            <h2>Join the Revolution</h2>
+            <p>Subscribe to get special offers, free giveaways, and once-in-a-lifetime deals.</p>
+            <form class="newsletter-form">
+                <input type="email" placeholder="Enter your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
     <footer>
-        <p>&copy; 2024 Lumina Tech. All rights reserved.</p>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <div class="logo">E-commerce<span class="dot">.</span></div>
+                <p>Elevating your digital lifestyle with premium technology.</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Shop</h4>
+                    <a href="#">All Products</a>
+                    <a href="#">Featured</a>
+                    <a href="#">New Arrivals</a>
+                </div>
+                <div class="link-group">
+                    <h4>Support</h4>
+                    <a href="#">FAQ</a>
+                    <a href="#">Shipping</a>
+                    <a href="#">Returns</a>
+                </div>
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <a href="#">About Us</a>
+                    <a href="#">Careers</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Ahmed AbdDayme. All rights reserved.</p>
+        </div>
     </footer>
+
+    <div id="toast-container"></div>
 
     <script src="script.js"></script>
 </body>
+
 </html>

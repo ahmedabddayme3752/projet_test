@@ -11,7 +11,7 @@ Open Browser To Home Page
     Open Browser    ${HOME URL}    ${BROWSER}
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
-    Title Should Be    Lumina | Next Gen Tech
+    Title Should Be    E-commerce | Next Gen Tech
 
 Input Search Term
     [Arguments]    ${term}

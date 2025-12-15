@@ -40,6 +40,9 @@ Utiliser des mots-clés fournis par la bibliothèque SeleniumLibrary pour saisir
 dans les champs, soumettre le formulaire et vérifier les éléments de la page web.
 Génération de rapports : Configurez la génération de rapports pour obtenir des informations
 détaillées sur l'exécution des tests
+
+-----------------------------------------------------------
+
 Projet2: Automatisation de test et validation pour la fonction de
 recherche sur un site d'e-commerce
 L'automatisation des tests pour la fonction de recherche sur un site d'e-commerce a plusieurs
