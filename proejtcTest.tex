@@ -182,14 +182,15 @@
 {\Large\color{secondaryblue}Robot Framework \& SeleniumLibrary pour la boutique Lumina}\\[2cm]
 
 % Informations étudiant
-\begin{tcolorbox}[colback=lightgray, colframe=primaryblue, boxrule=2pt, arc=3pt, width=0.6\textwidth]
+\begin{tcolorbox}[colback=lightgray, colframe=primaryblue, boxrule=2pt, arc=3pt, width=0.9\textwidth]
 \centering
 \vspace{0.5cm}
 {\large\bfseries\color{darkgray}Établissement :}\\[0.3cm]
 {\LARGE\color{primaryblue}ENET'COM}\\[0.5cm]
 {\large\bfseries\color{darkgray}Étudiants :}\\[0.3cm]
-{\LARGE\color{primaryblue}Ahmed AbdDAyem AHMEDBOUHA}\\[0.2cm]
-{\Large\color{secondaryblue}Moussa Mahmoud BA}\\[0.5cm]
+{\LARGE\color{primaryblue}Ahmed AbdDayme AHMEDBOUHA}\\[0.2cm]
+\vspace{0.2cm}
+{\LARGE\color{primaryblue}Moussa Mahmoud BA}\\[0.2cm]
 {\large\color{darkgray}Classe : 3 GT TST}\\[0.3cm]
 {\large\color{darkgray}Enseignante : Mme INES Jemal}\\[0.3cm]
 {\large\color{darkgray}Année universitaire : 2024/2025}
@@ -300,9 +301,49 @@ Les rapports HTML (log/report) sont générés dans \texttt{results/}.
     \caption{\textcolor{warningorange}{\textbf{Figure 3 :}} État vide quand aucun produit ne correspond}
 \end{figure}
 
-\begin{warningbox}
-Remplacez les chemins d'image si besoin (\texttt{captures/}) et ajustez les légendes selon vos propres captures.
-\end{warningbox}
+\subsection{Captures des rapports Robot Framework}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/report-html.png}
+    \caption{\textcolor{primaryblue}{\textbf{Figure 4 :}} Rapport Robot Framework \texttt{report.html} avec 4 tests passés}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/log-html.png}
+    \caption{\textcolor{secondaryblue}{\textbf{Figure 5 :}} Détail d'exécution dans \texttt{log.html} (mots-clés et captures)}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{captures/command-log.png}
+    \caption{\textcolor{darkgray}{\textbf{Figure 6 :}} Capture du terminal lors de l'exécution de \texttt{robot -d results ...}}
+\end{figure}
+
+\subsection{Trace de la commande Robot}
+\begin{lstlisting}[style=bash, caption=Exécution des tests depuis le terminal]
+cd /home/ahmed/Desktop/projetTest
+robot -d results ecommerce_project/tests/search_tests.robot
+==============================================================================
+Search Tests :: A test suite for the e-commerce search functionality.
+==============================================================================
+Search For Existing Product :: Test searching for a product that e... | PASS |
+------------------------------------------------------------------------------
+Search For Category :: Test searching for a category (e.g., 'Audio'). | PASS |
+------------------------------------------------------------------------------
+Search For Non-Existent Product :: Test searching for a term that ... | PASS |
+------------------------------------------------------------------------------
+Search Partial Match :: Test searching with a partial string.         | PASS |
+------------------------------------------------------------------------------
+Search Tests :: A test suite for the e-commerce search functionality. | PASS |
+4 tests, 4 passed, 0 failed
+==============================================================================
+Output:  /home/ahmed/Desktop/projetTest/results/output.xml
+Log:     /home/ahmed/Desktop/projetTest/results/log.html
+Report:  /home/ahmed/Desktop/projetTest/results/report.html
+\end{lstlisting}
+
+
 
 \section{Conclusion}
 \begin{successbox}

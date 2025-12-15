@@ -10,8 +10,8 @@ Test Teardown     Close The Browser
 Search For Existing Product
     [Documentation]    Test searching for a product that exists in the catalog.
     Open Browser To Home Page
-    Input Search Term    E-commerce
-    Verify Product Visible    E-commerce X1 Laptop
+    Input Search Term    Lumina
+    Verify Product Visible    Lumina X1 Laptop
     Verify Product Not Visible    Sonic Pro Headphones
 
 Search For Category
@@ -20,7 +20,7 @@ Search For Category
     Input Search Term    Audio
     Verify Product Visible    Sonic Pro Headphones
     Verify Product Visible    BassBoom Speaker
-    Verify Product Not Visible    E-commerce X1 Laptop
+    Verify Product Not Visible    Lumina X1 Laptop
 
 Search For Non-Existent Product
     [Documentation]    Test searching for a term that yields no results.

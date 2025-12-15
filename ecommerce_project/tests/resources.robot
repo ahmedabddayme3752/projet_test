@@ -12,21 +12,25 @@ Open Browser To Home Page
     Maximize Browser Window
     Set Selenium Speed    ${DELAY}
     Title Should Be    E-commerce | Next Gen Tech
+    Wait Until Page Contains Element    css=.product-card
 
 Input Search Term
     [Arguments]    ${term}
     Input Text    id:search-input    ${term}
+    Run Keyword And Ignore Error    Wait Until Page Contains Element    css=.product-card    2s
 
 Verify Product Visible
     [Arguments]    ${product_name}
+    Scroll Element Into View    xpath=//h3[contains(text(), '${product_name}')]
     Wait Until Element Is Visible    xpath=//h3[contains(text(), '${product_name}')]
     Element Should Be Visible    xpath=//h3[contains(text(), '${product_name}')]
 
 Verify Product Not Visible
     [Arguments]    ${product_name}
-    Element Should Not Be Visible    xpath=//h3[contains(text(), '${product_name}')]
+    Page Should Not Contain Element    xpath=//h3[contains(text(), '${product_name}')]
 
 Verify No Results Message
+    Scroll Element Into View    id:no-results
     Wait Until Element Is Visible    id:no-results
     Element Should Be Visible    id:no-results
     Element Should Contain    id:no-results    No products found
